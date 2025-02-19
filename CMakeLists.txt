@@ -75,6 +75,16 @@ add_library(crazyflieLinkCpp
 #     $<INSTALL_INTERFACE:include/crazyflie_cpp>
 #     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/crazyflie_cpp>
 # )
+install(TARGETS crazyflieLinkCpp
+  EXPORT crazyflieLinkCpp-targets
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/crazyflieLinkCpp
+  DESTINATION include/crazyflie_cpp
+)
+
 
 # Apple macOS libraries
 if (APPLE)
